@@ -53,6 +53,7 @@
                             <a href=""><i class="far fa-heart fa-2x"></i></a>
                         </li>
                     </ul>
+
                 </div>
             </div>
         </nav>
@@ -60,100 +61,41 @@
         <div id="carousel-index" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../img/bg-contacto.jpg" class="d-block w-100" alt="botellas azules para solarizar">
+                    <img src="../img/bg-shop.jpg" class="d-block w-100" alt="botellas azules para solarizar">
                 </div>
                 <div class="navbar__bg--titule">
-                    <h1>CONTACTO</h1>
+                    <h1>SHOP ONLINE</h1>
                 </div>
             </div>
+            
         </div>
-
     </header>
 
     <main>
 
-        <section class="contacto container">
+        <div>
+            Ordenar por
+            <!-- Ordenar por: precio - alto_bajo - bajo_alto -->
+        </div>
 
-            <div class="contacto__texto">
-                <h2>CONTÁCTANOS</h2>
-                <p>Podemos hablar por <a href="https://wa.me/5491153192246" target="_blanck">WhatsApp</a> o
-                    rellenar el formulario a continuación y nosotros nos contacteremos con vos.</p>
-            </div>
 
-            <div class="contacto__form">
-                <form action="">
-                    
-                    <div class="mb-3">
-                        <label clsss="form-label" for="nombre">NOMBRE</label>
-                        <input  class="form-control" type="text" id="nombre" name="nombre" placeholder="Ingresar nombre">
-                    </div>
+        <div>
+            Filtros
+            <!-- 
+                Por geometria: metraton, flor de la vida 
+                Precios entre - rango
+                Por palabras
+                Tipo de producto: botellas, vasos, libro, posa botella
+            -->
+        </div>
 
-                    <div class="mb-3">
-                        <label clsss="form-label" for="apellido">APELLIDO</label>
-                        <input class="form-control" type="text" id="apellido" name="apellido" placeholder="Ingrese apellido">
-                    </div>
-
-                    <div class="mb-3">
-                        <label clsss="form-label" for="fecha_nacimiento">CUMPLEAÑOS</label>
-                        <input class="form-control" type="date" name="fecha_nacimiento" id="fecha_nacimiento">
-                    </div>
-
-                    <div class="mb-3">
-                        <label clsss="form-label" for="phone">CELULAR</label>
-                        <input class="form-control" type="tel" name="phone" id="phone" placeholder="Ej.: +5491156542861">
-                    </div>
-
-                    <div class="mb-3">
-                        <label clsss="form-label" for="asunto">ASUNTO</label>
-                        <select class="form-control" name="asunto" id="asunto">
-                            <option name="productos">Productos</option>
-                            <option name="envios">Envíos</option>
-                            <option name="medio_pago">Medios de pago</option>
-                            <option name="otro">Otro</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <textarea class="form-control" name="consulta" id="" cols="30" rows="10" placeholder="Consulta"></textarea>
-                    </div>
-
-                    <div class="mb-3 contacto__form--news form-check">
-                        <input class="form-check-input" type="checkbox" name="newsletter" id="newsletter">
-                        <label class="form-check-label" for="newsletter">Recibir información sobre promociones y nuevos
-                            lanzamientos.</label>
-                    </div>
-
-                    <div class="contacto__form--botones">
-                        <input type="submit" value="ENVIAR">
-                        <input type="reset" value="VACIAR FORMULARIO">
-                    </div>
-
-                </form>
-            </div>
-
-        </section>
-
-        <section class="redes">
-
-            <div class="redes__div">
-                <h2>SEGUINOS EN INSTAGRAM</h2>
-                <h2 class="redes__div--dots">. . . . . </h2>
-                <div class="redes__div--instagram">
-                    <a href="https://www.instagram.com/sunwater.ar/" target="_blanck"><i
-                            class="fab fa-instagram-square fa-5x"></i></a>
-                    <a href="https://www.instagram.com/sunwater.ar/" target="_blanck"
-                        class="redes__div--instagram--link">sunwater.ar</a>
-                </div>
-            </div>
-
-        </section>
+        <div>
+            <!-- Card con los productos: icono corazón, agregar al carrito, precio, foto -->
+        </div>
     </main>
 
 
-
     <footer>
-
-
 
         <div class="footer cointainer">
 
@@ -185,6 +127,7 @@
         </div>
 
     </footer>
+    <script src="../js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
     </script>

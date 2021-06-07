@@ -8,6 +8,12 @@
   color: #6E6E68; }
   * body {
     background-color: #eeeee4; }
+    @media (min-width: 992px) {
+      * body header nav div li.nav-item i.fa-shopping-bag {
+        margin: 0rem 1.5rem 0rem 3rem; } }
+    @media (min-width: 992px) {
+      * body header nav div li.nav-item i.fa-heart {
+        margin: 0rem 1.5rem 0rem 0rem; } }
     * body main {
       background-color: #eeeee4;
       display: grid;
@@ -597,3 +603,6 @@ button.navbar-toggler:focus {
         text-decoration: underline;
         transform: scale(1.2);
         transition: all 1s; }
+
+* main header div .navbar__bg--titule img {
+  height: 1044px; }

@@ -17,45 +17,55 @@
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
 
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
+                <a class="navbar-brand" href="#index.html"><img src="img/logo_y_letras.svg" alt=""
+                        class="navbar__logo"></a>
 
-            <a class="navbar-brand" href="#index.html"><img src="img/logo_y_letras.svg" alt="" class="navbar__logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span><i class="fas fa-bars 3x"></i></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end container" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">INICIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/nosotros.html">NOSOTROS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/galeria.html">GALERIA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/faq.html">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/contacto.html" tabindex="-1">CONTACTO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/shop.html" tabindex="-1">SHOP</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href=""><i class="fas fa-shopping-bag fa-2x"></i></a>
+                            <a href=""><i class="far fa-heart fa-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span><i class="fas fa-bars 3x"></i></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end container" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">INICIO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="html/nosotros.html">NOSOTROS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="html/galeria.html">GALERIA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="html/faq.html">FAQs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="html/contacto.html" tabindex="-1">CONTACTO</a>
-                    </li>
-                </ul>
+        <div id="carousel-index" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/bg-index.jpg" class="d-block w-100" alt="botellas azules para solarizar">
+                </div>
             </div>
         </div>
-    </nav>
 
-    <div id="carousel-index" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/bg-index.jpg" class="d-block w-100" alt="botellas azules para solarizar">
-            </div>
-        </div>
-    </div>
+    </header>
 
     <main class="container">
 
