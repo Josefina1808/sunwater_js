@@ -5,7 +5,7 @@ Agregar productos al carrrito
 Filtrado de producto por: categoría, palabras
 Ordenar por: menor precio, mayor precio, 
 Calcular subtotal sin Envío X
-Calculador envío según zona 
+Calculador envío según zona X
 Calcular Total de la compra x
 Calcular IVA de la compra (los precios ya tienen IVA) X
 PASOS EN LA COMPPRA
@@ -35,13 +35,25 @@ function sumar() {
 let subtotal = sumar(productosCarrito);
 
 let envio = function envio() {
-    if (condition) {
-        //dependiendo de lo indicado en el formulario, según provincia se calcula el envío
+    switch (key) { //según lo que seleccione el usuario en el form es el tipo de caso
+        case 'Interior':
+            envio = 1000;
+            break;
+        case 'CABA':
+            envio = 250;
+            break;
+        case 'Buenos Aires':
+            envio = 600;
+            break;
+        case 'PickUp':
+            envio = 0;
+            break;
+        default:
+            alert('No seleccionó forma de envío')
+            break;
     }
 }
 
 let total = subtotal + envio;
 
-let iva = (total) => total*0.21;
-
-
+let iva = (total) => total * 0.21;
