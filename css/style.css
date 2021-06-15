@@ -603,6 +603,3 @@ button.navbar-toggler:focus {
         text-decoration: underline;
         transform: scale(1.2);
         transition: all 1s; }
-
-* main header div .navbar__bg--titule img {
-  height: 1044px; }

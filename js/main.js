@@ -16,8 +16,8 @@ PASOS EN LA COMPPRA
 4° Pago
 5° Confirmación*/
 
-let productosCarrito = [];
-let productoLikeado = [];
+let cart = [];
+let like = [];
 // Necesito un condicional para agregar los productos a las lista, es decir, si like === true => lo agrega
 
 //FILTRADO: dependiendo de lo seleccionado, es lo que se muestra
@@ -32,7 +32,7 @@ function sumar() {
     return resultado;
 }
 
-let subtotal = sumar(productosCarrito);
+let subtotal = sumar(cart.product.price);
 
 let envio = function envio() {
     switch (key) { //según lo que seleccione el usuario en el form es el tipo de caso
@@ -57,3 +57,32 @@ let envio = function envio() {
 let total = subtotal + envio;
 
 let iva = (total) => total * 0.21;
+
+class product {
+    constructor(id, titule, price, stock, category) {
+        this.id = id
+        this.titule = titule
+        this.price = price
+        this.stock = stock
+        this.category = category
+    }
+    getSubtotal = function (qty) {
+        return this.price * qty
+    }
+    getBuy = function (qty) {
+        return {
+            product: this.titule,
+            quantity: qty,
+            amount: this.getSubtotal(qty),
+        }
+    }
+    addToCart = function () {
+        cart.push(this.getBuy())
+    }
+}
+
+const BOTELLA = new product(001, 'Botella Azul Para Solarizar', 1000, 100, 'Botellas')
+const POSA_BOTELLA = new product(002, 'Posa Botella', 469, 50, 'Posa Botellas')
+const PULSERA_CELESTE = new product(003, 'Pulsera Metratón', 439, 20, 'Pulseras')
+const PULSERA_AZUL = new product(004, 'Pulsera Flor de la Vida', 439, 20, 'Pulseras')
+
