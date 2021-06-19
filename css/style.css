@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;500;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;500;900&display=swap");
 * {
-  /* margin: 0;
-    padding: 0;
-    box-sizing: border-box; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Yantramanav", sans-serif;
   color: #6E6E68; }
   * body {
@@ -603,3 +603,59 @@ button.navbar-toggler:focus {
         text-decoration: underline;
         transform: scale(1.2);
         transition: all 1s; }
+
+* body main.main__shop {
+  background-color: white;
+  border-radius: 15px; }
+  * body main.main__shop .filtros {
+    grid-column: 1/13;
+    grid-row: 1/3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1rem 0rem 1.5rem; }
+  * body main.main__shop .productos {
+    grid-row: 3/13;
+    grid-column: 1/13;
+    margin: 0 auto; }
+    * body main.main__shop .productos .card__product {
+      margin: 0.5rem 1rem 1rem 1rem;
+      padding: 0.5rem 0rem 0.75rem 0rem;
+      background-color: rgba(209, 209, 209, 0.521);
+      border-radius: 12px;
+      width: 16rem;
+      height: auto; }
+      * body main.main__shop .productos .card__product .card_product--titule_principal {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; }
+        * body main.main__shop .productos .card__product .card_product--titule_principal .card__product--titule {
+          font-size: 1.5rem;
+          text-align: center; }
+        * body main.main__shop .productos .card__product .card_product--titule_principal .card__product--desc {
+          font-weight: 200;
+          text-align: center;
+          padding: 0rem 0rem 0.25rem 0rem; }
+      * body main.main__shop .productos .card__product .card__product--img {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        * body main.main__shop .productos .card__product .card__product--img img {
+          height: 14rem;
+          width: 14rem;
+          border-radius: 6px; }
+      * body main.main__shop .productos .card__product .card__product--cta {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 0.5rem; }
+        * body main.main__shop .productos .card__product .card__product--cta .price {
+          color: #012e67;
+          font-size: 1.5rem; }
+        * body main.main__shop .productos .card__product .card__product--cta .btn {
+          color: #012e67;
+          font-weight: 400;
+          padding: 0.25rem 0.5rem;
+          background-color: #90b48227;
+          border: solid #90B482;
+          border-radius: 0.5rem; }
