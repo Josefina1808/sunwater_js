@@ -613,7 +613,10 @@ button.navbar-toggler:focus {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 1rem 0rem 1.5rem; }
+    margin: 1rem 0rem 1.5rem;
+    /*  .filtros__sort {}
+
+                .filtros__filtrar {}*/ }
   * body main.main__shop .productos {
     grid-row: 3/13;
     grid-column: 1/13;
