@@ -71,7 +71,8 @@ class product {
             price: this.price,
             stock: this.stock,
             category: this.category,
-            description: this.description
+            description: this.description,
+            photo: this.photo
         })
     }
 
