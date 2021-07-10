@@ -658,3 +658,52 @@ button.navbar-toggler:focus {
           background-color: #90b48227;
           border: solid #90B482;
           border-radius: 0.5rem; }
+
+.card__carrito {
+  margin: 0.5rem 0rem;
+  padding: 0.5rem 0rem 0.75rem 0rem;
+  background-color: rgba(209, 209, 209, 0.521);
+  border-radius: 12px;
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center; }
+  .card__carrito .card_carrito--titule_principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-content: center; }
+    .card__carrito .card_carrito--titule_principal .card__carrito--titule {
+      font-size: 1.5rem;
+      text-align: center; }
+    .card__carrito .card_carrito--titule_principal .card__carrito--desc {
+      font-weight: 200;
+      text-align: center;
+      padding: 0rem 0rem 0.25rem 0rem; }
+  .card__carrito .card__carrito--img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+    margin: 0rem 1rem; }
+    .card__carrito .card__carrito--img img {
+      height: 7rem;
+      width: 7rem;
+      border-radius: 6px; }
+  .card__carrito .card__carrito--cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%; }
+    .card__carrito .card__carrito--cta .price {
+      color: #012e67;
+      font-size: 1.5rem; }
+    .card__carrito .card__carrito--cta .btn {
+      color: #012e67;
+      font-weight: 400;
+      padding: 0.25rem 0.5rem;
+      background-color: #90b48227;
+      border: solid #90B482;
+      border-radius: 0.5rem; }

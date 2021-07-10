@@ -82,7 +82,7 @@ const BOTELLA1 = new product(001, 'Botella Flor de la Vida', 1000, 100, 'Botella
 const BOTELLA2 = new product(002, 'Botella Metatrón', 1000, 70, 'Botellas', 'Botella para solarizar')
 const POSA_BOTELLA_flor = new product(003, 'Posa Botella', 469, 50, 'Posa Botellas', 'Para solarización')
 const POSA_BOTELLA_metatron = new product(004, 'Posa Botella', 469, 50, 'Posa Botellas', 'Para solarización')
-const PULSERA_CELESTE = new product(005, 'Pulsera Metratón', 439, 20, 'Pulseras', 'Pulsera con energía positiva' )
+const PULSERA_CELESTE = new product(005, 'Pulsera Metratón', 439, 20, 'Pulseras', 'Pulsera con energía positiva')
 const PULSERA_AZUL = new product(006, 'Pulsera Flor de la Vida', 439, 20, 'Pulseras', 'Pulsera con energía positiva')
 
 BOTELLA1.addToProducts()
@@ -93,8 +93,7 @@ PULSERA_CELESTE.addToProducts()
 PULSERA_AZUL.addToProducts()
 
 
-let subtotal = sumar(cart.map(e => e.amount));
-
+let subtotal = sumar(cart.map(e => e.price));
 
 let envio = function calculadorEnvio(key) {
     switch (key) { //según lo que seleccione el usuario en el form es el tipo de caso
@@ -120,7 +119,7 @@ let total = subtotal + envio;
 let iva = (total) => total * 0.21;
 
 const renderProducts = array => {
-    const productsSection = document.querySelector('body main section div.productos')
+    const productsSection = $('body main section div.productos');
     //si el parámetro es false o está vaío
     if (!array || array.length === 0) {
         productsSection.innerHTML = '<p>No hay productos :(</p>';
@@ -151,11 +150,15 @@ const renderProducts = array => {
 }
 
 const addToCart = evento => {
-   
+
     const idDelProductoABuscar = evento.target.value;
 
-    const buscarProductoEnDB = products.find(elemento => elemento.id === idDelProductoABuscar);
-    
+    const buscarProductoEnDB = products.find(
+
+        (elemento) => elemento.id == idDelProductoABuscar
+
+    );
+    console.log(buscarProductoEnDB);
     cart.push(buscarProductoEnDB);
     //Acá termina la lógica para agregar al ARRAY del cart 
     ///////////////////////////////////////////////////////////
@@ -164,7 +167,7 @@ const addToCart = evento => {
 }
 
 const renderCart = array => {
-    const cartSection = document.querySelector('body main section div.cart')
+    const cartSection = $('body main section div.cart')
     //si el parámetro es false o está vacio
     if (!array || array.length === 0) {
         cartSection.innerHTML = '<p>Tu carrito está vacío</p>';
@@ -174,17 +177,18 @@ const renderCart = array => {
     let html = '';
 
     array.forEach(product => {
-        
+
         html += `
-        <div class="card__product producto-${product.id}"> 
-                        <div class="card_product--titule_principal">
-                            <div class="card__product--titule">${product.titule}</div>
-                            <div class="card__product--desc">${product.description}r</div>
-                        </div> 
-                        <div class="card__product--img">
+        <div class="card__carrito producto-${product.id}"> 
+        <div class="card__carrito--img">
                             <img src="../img/products/${product.id}.jpg" alt="">
                         </div>
-                        <div class="card__product--cta">
+                        <div class="card_carrito--titule_principal">
+                            <div class="card__carrito--titule">${product.titule}</div>
+                            <div class="card__carrito--desc">${product.description}r</div>
+                        </div> 
+                        
+                        <div class="card__carrito--cta">
                             <div class="price">$${product.price}</div>
                             <button class="btn btn-delete" onclick="deleteFromCart(${product.id})">X</button>
                         </div>
@@ -205,11 +209,11 @@ const deleteFromCart = id => {
 }
 
 
-window.onload = () => { 
-   renderProducts(products);
-   renderCart(cart);
-   const btnBuy = document.querySelectorAll('.btn-buy');
-   const btnDelete = document.querySelectorAll('.btn-delete');
+window.onload = () => {
+    renderProducts(products);
+    renderCart(cart);
+    const btnBuy = $('.btn-buy');
+    const btnDelete = $('.btn-delete');
 
-   btnBuy.forEach(btn => btn.addEventListener('click', addToCart));
+    btnBuy.forEach(btn => btn.addEventListener('click', addToCart));
 }
