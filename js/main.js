@@ -2,8 +2,6 @@
 FUNCIONES A REALIZAR
 X Agregar productos a lista de me gusta 
 X Agregar productos al carrrito
-Filtrado de producto por: categoría, palabras
-Ordenar por: menor precio, mayor precio, 
 X Calcular subtotal sin Envío 
 X Calculador envío según zona 
 X Calcular Total de la compra 
@@ -93,6 +91,7 @@ PULSERA_CELESTE.addToProducts()
 PULSERA_AZUL.addToProducts()
 
 
+/* CÁLCULO DE IMPORTES */
 let subtotal = sumar(cart.map(e => e.price));
 
 let envio = function calculadorEnvio(key) {
@@ -118,8 +117,9 @@ let total = subtotal + envio;
 
 let iva = (total) => total * 0.21;
 
+/* RENDERIZANDO PRODUCTOS Y CARRITO */
 const renderProducts = array => {
-    const productsSection = $('body main section div.productos');
+    const productsSection = $('body main section div.row.productos');
     //si el parámetro es false o está vaío
     if (!array || array.length === 0) {
         productsSection.innerHTML = '<p>No hay productos :(</p>';
@@ -146,7 +146,7 @@ const renderProducts = array => {
         `;
     });
 
-    productsSection.innerHTML = html;
+    productsSection.html(html);
 }
 
 const addToCart = evento => {
@@ -196,7 +196,7 @@ const renderCart = array => {
          `;
     });
 
-    cartSection.innerHTML = html;
+    cartSection.html(html);
 }
 
 const deleteFromCart = id => {
@@ -208,12 +208,42 @@ const deleteFromCart = id => {
     renderCart(cart);
 }
 
+/* BUSCADOR DE PRODUCTOS */
+const formBuscador = document.querySelector('#formulario');
+formBuscador.addEventListener('submit', buscarProductos);
+function buscarProductos(e) {
+	e.preventDefault();
+	const inputBuscador = document.querySelector('#buscador').value;
+	const inputFiltrado = inputBuscador.trim().toLowerCase();
+
+	const resultado = products.filter(product => product.titule.toLowerCase().includes(inputFiltrado));
+
+	renderProducts(resultado);
+
+	formBuscador.reset();
+}
 
 window.onload = () => {
-    renderProducts(products);
-    renderCart(cart);
-    const btnBuy = $('.btn-buy');
-    const btnDelete = $('.btn-delete');
 
-    btnBuy.forEach(btn => btn.addEventListener('click', addToCart));
-}
+    renderProducts(products);
+
+    renderCart(cart);
+
+    const btnBuy = $(".btn-buy");
+
+    const btnDelete = $(".btn-delete");
+
+    btnBuy.each(function () {
+
+        $(this).on("click", function (e) {
+            addToCart(e);
+        });
+
+    });
+
+};
+
+/* Nuevos erroes
+-Cuando queda un elemento en el carrito, al clicker no se borra el html. Pero si se elimina del array
+-Al filtrar los productos, no me deja agregarlos al carrito cuando el buscador fue usado
+ */

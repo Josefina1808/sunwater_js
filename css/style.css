@@ -601,6 +601,48 @@ button.navbar-toggler:focus {
         transform: scale(1.2);
         transition: all 1s; }
 
+* body .buscador {
+  margin-top: 80px;
+  color: white; }
+
+* body .buscador form {
+  position: relative;
+  margin-bottom: 0; }
+
+* body .buscador form #buscador {
+  height: 50px;
+  margin-bottom: 0;
+  width: 100%; }
+
+* body .buscador form .submit-buscador {
+  color: #012e67;
+  font-weight: 400;
+  background-color: #90b48227;
+  border: solid #90B482;
+  height: 100%;
+  margin-top: 1rem;
+  padding: .25rem 2rem; }
+
+* body .back-top {
+  position: fixed;
+  display: none;
+  background: black;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 1;
+  font-size: 16px;
+  border-radius: 50%;
+  right: 15px;
+  bottom: 15px;
+  transition: background 0.5s;
+  z-index: 11; }
+
+* body .back-top i {
+  padding-top: 12px;
+  color: #fff; }
+
 * body main.main__shop {
   background-color: white;
   border-radius: 15px; }
@@ -621,7 +663,6 @@ button.navbar-toggler:focus {
       margin: 0.5rem 1rem 1rem 1rem;
       padding: 0.5rem 0rem 0.75rem 0rem;
       background-color: rgba(209, 209, 209, 0.521);
-      border-radius: 12px;
       width: 16rem;
       height: auto; }
       * body main.main__shop .productos .card__product .card_product--titule_principal {
@@ -663,8 +704,7 @@ button.navbar-toggler:focus {
   margin: 0.5rem 0rem;
   padding: 0.5rem 0rem 0.75rem 0rem;
   background-color: rgba(209, 209, 209, 0.521);
-  border-radius: 12px;
-  width: 50%;
+  width: fit-content;
   height: auto;
   display: flex;
   flex-direction: row;
