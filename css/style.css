@@ -697,6 +697,10 @@ button.navbar-toggler:focus {
   display: flex;
   flex-direction: column;
   align-items: center; }
+  .cart .cart__monto {
+    display: flex;
+    justify-content: end;
+    align-items: center; }
 
 .card__carrito {
   margin: 0.5rem 0rem;
