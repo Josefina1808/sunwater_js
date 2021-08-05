@@ -55,13 +55,6 @@ class product {
         cart.filter(product => this.id !== id) //no se si funcione
     }
 
-    addToLike = function () {
-        like.push({
-            product: this.titule,
-            price: this.price,
-        })
-    }
-
     addToProducts = function () {
         return products.push({
             id: this.id,
@@ -117,7 +110,7 @@ let total = subtotal + envio;
 
 let iva = (total) => total * 0.21;
 
-/* RENDERIZANDO PRODUCTOS Y CARRITO */
+/* RENDERIZADO DE PRODUCTOS Y CARRITO */
 const renderProducts = array => {
     const productsSection = $('body main section div.row.productos');
     //si el parámetro es false o está vaío
@@ -144,6 +137,8 @@ const renderProducts = array => {
                         </div>
          </div> 
         `;
+        const addButton = document.querySelectorAll("body main section div.row.productos");
+        addButton.forEach((product) => product.addEventListener("click", addToCart));
     });
 
     productsSection.html(html);
@@ -154,9 +149,7 @@ const addToCart = evento => {
     const idDelProductoABuscar = evento.target.value;
 
     const buscarProductoEnDB = products.find(
-
         (elemento) => elemento.id == idDelProductoABuscar
-
     );
     console.log(buscarProductoEnDB);
     cart.push(buscarProductoEnDB);
@@ -167,11 +160,16 @@ const addToCart = evento => {
 }
 
 const renderCart = array => {
-    const cartSection = $('body main section div.cart')
+    const cartSection = $("body main section div.cart");
+
     //si el parámetro es false o está vacio
+
     if (!array || array.length === 0) {
-        cartSection.innerHTML = '<p>Tu carrito está vacío</p>';
+
+        cartSection.html("<p>Tu carrito está vacío</p>");
+
         return;
+
     }
     cartSection.innerHTML = '';
     let html = '';
@@ -211,16 +209,17 @@ const deleteFromCart = id => {
 /* BUSCADOR DE PRODUCTOS */
 const formBuscador = document.querySelector('#formulario');
 formBuscador.addEventListener('submit', buscarProductos);
+
 function buscarProductos(e) {
-	e.preventDefault();
-	const inputBuscador = document.querySelector('#buscador').value;
-	const inputFiltrado = inputBuscador.trim().toLowerCase();
+    e.preventDefault();
+    const inputBuscador = document.querySelector('#buscador').value;
+    const inputFiltrado = inputBuscador.trim().toLowerCase();
 
-	const resultado = products.filter(product => product.titule.toLowerCase().includes(inputFiltrado));
+    const resultado = products.filter(product => product.titule.toLowerCase().includes(inputFiltrado));
 
-	renderProducts(resultado);
+    renderProducts(resultado);
 
-	formBuscador.reset();
+    formBuscador.reset();
 }
 
 window.onload = () => {
@@ -232,14 +231,6 @@ window.onload = () => {
     const btnBuy = $(".btn-buy");
 
     const btnDelete = $(".btn-delete");
-
-    btnBuy.each(function () {
-
-        $(this).on("click", function (e) {
-            addToCart(e);
-        });
-
-    });
 
 };
 
