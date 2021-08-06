@@ -549,13 +549,13 @@ button.navbar-toggler:focus {
         font-weight: 500; }
 
 .redes {
-  width: 100vw;
+  width: 100%;
   height: fit-content;
   background-image: url(../img/bg-faq.jpg);
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 2rem 0rem;
+  padding: 2rem 2rem;
   opacity: 90%;
   position: relative;
   grid-column: 1/13;
