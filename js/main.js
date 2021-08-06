@@ -14,7 +14,7 @@ PASOS EN LA COMPPRA
 4° Pago
 5° Confirmación*/
 
-/* Función suma que luego utulizado para calcular el subtotal*/
+/* Función suma que luego utulizo para calcular el subtotal*/
 function sumar(lista) {
     let resultado = 0;
     for (let i = 0; i < lista.length; i++) {
@@ -24,12 +24,12 @@ function sumar(lista) {
 }
 
 
-/* Listas */
+// LISTAS
 let cart = [];
 let products = [];
 
 
-/* OBJETO PRODUCTO con métodos */
+// OBJETO PRODUCTO con métodos 
 class product {
     constructor(id, titule, price, stock, category, description, photo) {
         this.id = id
@@ -80,8 +80,8 @@ const POSA_BOTELLA_flor = new product(003, 'Posa Botella', 469, 50, 'Posa Botell
 const POSA_BOTELLA_metatron = new product(004, 'Posa Botella', 469, 50, 'Posa Botellas', 'Para solarización')
 const PULSERA_CELESTE = new product(005, 'Pulsera Metratón', 439, 20, 'Pulseras', 'Pulsera con energía positiva')
 const PULSERA_AZUL = new product(006, 'Pulsera Flor de la Vida', 439, 20, 'Pulseras', 'Pulsera con energía positiva')
-const VASO = new product(007,'Vaso cristal azul', 969, 48, 'Vasos', 'Capacidad: 600cc')
-const COPA = new product(08,'Copa cristal azul', 1136, 36, 'Copas', 'Capacidad: 600cc')
+const VASO = new product(007, 'Vaso cristal azul', 969, 48, 'Vasos', 'Capacidad: 600cc')
+const COPA = new product(08, 'Copa cristal azul', 1136, 36, 'Copas', 'Capacidad: 600cc')
 const AGUA_500 = new product(09, 'Agua mineral Sola´n de Cabras', 533, 12, 'Agua', '500 ml - Botella de vidrio')
 const AGUA_750 = new product(10, 'Agua mineral Sola´n de Cabras', 789, 12, 'Agua', '750 ml - Botella de vidrio')
 const AGUA_1 = new product(11, 'Agua mineral Sola´n de Cabras', 996, 12, 'Agua', '1000 ml - Botella de vidrio')
@@ -99,34 +99,10 @@ AGUA_750.addToProducts()
 AGUA_1.addToProducts()
 
 
-/* CÁLCULO DE IMPORTES */
+/* CÁLCULO DE IMPORTE */
 let subtotal = sumar(cart.map(e => e.price));
 
-let envio = function calculadorEnvio(key) {
-    switch (key) { //según lo que seleccione el usuario en el form es el tipo de caso
-        case 'Interior':
-            return 400;
-
-        case 'CABA':
-            return 150;
-
-        case 'Buenos Aires':
-            return 300;
-
-        case 'PickUp':
-            return 0;
-
-        default:
-            return alert('No seleccionó forma de envío')
-    }
-}
-
-let total = subtotal + envio;
-
-let iva = (total) => total * 0.21;
-
-
-/* RENDERIZADO PRODUCTOS*/
+// RENDERIZADO PRODUCTOS
 const renderProducts = array => {
     const productsSection = $('body main section div.row.productos');
     //si el parámetro es false o está vaío
@@ -200,7 +176,7 @@ const renderCart = array => {
                         </div>
                         <div class="card_carrito--titule_principal">
                             <div class="card__carrito--titule">${product.titule}</div>
-                            <div class="card__carrito--desc">${product.description}r</div>
+                            <div class="card__carrito--desc">${product.description}</div>
                         </div> 
                         
                         <div class="card__carrito--cta">
@@ -208,14 +184,16 @@ const renderCart = array => {
                             <button class="btn btn-delete" onclick="deleteFromCart(${product.id})">X</button>
                         </div>
          </div>
-         <div class="cart__monto">
-         <p>Subtotal</p>
-         <p><strong>$${subtotal}</strong></p>
-         </div> 
          `;
     });
 
-    cartSection.html(html);
+    cartSection.html(html).append(`
+    <div class="cart__monto">    
+       <p>Subtotal</p>
+       <p><strong>$${subtotal}</strong></p>
+    </div> 
+    <button class="btn" id="btn-finalizar" onclick="alertCheckout()">FINALIZAR COMPRA</button>
+    `);
 }
 
 const deleteFromCart = id => {
@@ -227,16 +205,44 @@ const deleteFromCart = id => {
     renderCart(cart);
 }
 
-/* Animación: se activa al hacer click en el ícono de carrito en el navbar */
+// ANIMACIÓN: se activa al hacer click en el ícono de carrito en el navbar 
 $('header nav li a#cart-icon').on('click', (e) => {
     e.preventDefault();
 
     $('html, body').animate({
-        scrollTop: $('#section__cart').offset().top}, 500);
+        scrollTop: $('#section__cart').offset().top
+    }, 500);
 
 });
 
-/* BUSCADOR DE PRODUCTOS */
+//FINALIZAR COMPRA: muestra un cartel que te pregunta si deseeas finalizar la compra
+function alertCheckout() {
+    Swal.fire({
+        title: '¿Quieres finalizar tu compra?',
+        html: `Tu monto a pagar es $ ${subtotal}`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, finalizar',
+        cancelButtonText: 'Cancelar',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                'Compra finalizada!',
+                'Gracias por tu compra, nos contactaremos por WhatsApp para coordinar el pago y la entrega',
+                'success'
+            )
+            //si la persona confirma entonces se vacia el carrito
+            cart = [];
+            renderCart(cart);
+        }
+    })
+
+}
+
+
+// BUSCADOR DE PRODUCTOS 
 const formBuscador = document.querySelector('#formulario');
 formBuscador.addEventListener('submit', buscarProductos);
 
@@ -264,8 +270,3 @@ window.onload = () => {
     const btnDelete = $(".btn-delete");
 
 };
-
-/* Nuevos erroes
--Cuando queda un elemento en el carrito, al clicker no se borra el html. Pero si se elimina del array
--Al filtrar los productos, no me deja agregarlos al carrito cuando el buscador fue usado
- */

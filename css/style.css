@@ -701,6 +701,14 @@ button.navbar-toggler:focus {
     display: flex;
     justify-content: end;
     align-items: center; }
+  .cart .btn {
+    color: #012e67;
+    font-weight: 400;
+    padding: 0.5rem 0.5rem;
+    background-color: #90b48227;
+    border: solid #90B482;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem; }
 
 .card__carrito {
   margin: 0.5rem 0rem;
