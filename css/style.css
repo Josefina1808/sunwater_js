@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Yantramanav", sans-serif;
-  color: #6E6E68; }
+  color: #012e67; }
   * body {
     background-color: #eeeee4; }
     @media (min-width: 992px) {
@@ -36,10 +36,10 @@
       text-decoration: none; }
     * body a {
       text-decoration: none;
-      color: #90B482; }
+      color: #37afca; }
 
 .navbar {
-  background-color: #e5d09bb7;
+  background-color: #0f62959d;
   animation-name: aparecer;
   animation-duration: 1s;
   animation-iteration-count: 1;
@@ -63,7 +63,7 @@ button.navbar-toggler:focus {
   box-shadow: none; }
 
 .navbar-nav .nav-item .nav-link {
-  color: #6E6E68;
+  color: #012e67;
   font-weight: 500;
   font-size: 1.2rem;
   padding-right: 0.5rem; }
@@ -97,7 +97,7 @@ button.navbar-toggler:focus {
     display: none; } }
 
 .footer {
-  background-color: #e5d09b;
+  background-color: #0f62959d;
   width: 100%;
   height: fit-content; }
   .footer .footer__logo {
@@ -155,7 +155,7 @@ button.navbar-toggler:focus {
       height: min-content;
       text-align: justify; }
       .solarizar .solarizar__content .solarizar__content--text a {
-        color: #90B482; }
+        color: #37afca; }
       .solarizar .solarizar__content .solarizar__content--text a:hover {
         text-decoration: underline; }
     .solarizar .solarizar__content .solarizar__content--img {
@@ -200,7 +200,7 @@ button.navbar-toggler:focus {
         padding: 0.5rem 0rem;
         font-size: 1.4rem; }
         .codificar .codificar__content .codificar__content--text li a {
-          color: #90B482;
+          color: #37afca;
           font-weight: 500; }
     .codificar .codificar__content .codificar__content--img {
       background-image: url(../img/7.jpg);
@@ -439,15 +439,15 @@ button.navbar-toggler:focus {
       background-color: #eeeee4; }
     .faq__preguntas .accordion .accordion-item .accordion-header .accordion-button:focus {
       z-index: 3;
-      border-color: #90b48227;
+      border-color: #37afca7a;
       outline: 0;
-      box-shadow: 0 0 0 0.25rem #90b48227; }
+      box-shadow: 0 0 0 0.25rem #37afca7a; }
     .faq__preguntas .accordion .accordion-item .accordion-header .accordion-button::after {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgba(109, 140, 168, 1)' %3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); }
     .faq__preguntas .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed)::after {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgba(109, 140, 168, 1)'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); }
     .faq__preguntas .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
-      background-color: #90b48227; }
+      background-color: #37afca7a; }
   .faq__preguntas .accordion .accordion-item .accordion-collapse .accordion-body {
     font-weight: 350;
     font-size: 1.2rem; }
@@ -464,7 +464,7 @@ button.navbar-toggler:focus {
   .consulta h2 {
     text-align: center;
     font-style: italic;
-    color: #90B482; }
+    color: #37afca; }
   .consulta .consulta__content {
     display: flex;
     justify-content: space-between;
@@ -481,7 +481,7 @@ button.navbar-toggler:focus {
       margin-top: 1rem;
       padding: 10px;
       background-color: #d1e0cb;
-      border: 1.5px solid #90B482;
+      border: 1.5px solid #37afca;
       border-radius: 1rem; }
       .consulta .consulta__content .consulta__content--buttom a {
         color: #012e67;
@@ -520,20 +520,20 @@ button.navbar-toggler:focus {
       margin: 1rem 0rem;
       font-weight: 300; }
       .contacto .contacto__form div .form-control:focus {
-        border-color: #90B482;
-        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(144, 180, 130, 0.5); }
+        border-color: #37afca;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(1, 45, 103, 0.596); }
       .contacto .contacto__form div .form-control {
-        color: #6E6E68;
-        border: 1px solid #90B482; }
+        color: #012e67;
+        border: 1px solid #37afca; }
     .contacto .contacto__form .contacto__form--news {
       display: flex;
       flex-direction: row;
       align-items: center; }
       .contacto .contacto__form .contacto__form--news .form-check-input {
-        border: #90B482;
-        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(144, 180, 130, 0.5); }
+        border: #37afca;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(1, 45, 103, 0.596); }
       .contacto .contacto__form .contacto__form--news .form-check-input:checked {
-        background-color: #90B482; }
+        background-color: #37afca; }
     .contacto .contacto__form .contacto__form--botones {
       display: flex;
       flex-direction: row;
@@ -542,8 +542,8 @@ button.navbar-toggler:focus {
       .contacto .contacto__form .contacto__form--botones input {
         font-weight: 300;
         padding: 0.5rem 1rem;
-        background-color: #90b48227;
-        border: solid #90B482;
+        background-color: #37afca7a;
+        border: solid #37afca;
         border-radius: 0.5rem; }
       .contacto .contacto__form .contacto__form--botones input:hover {
         font-weight: 500; }
@@ -620,16 +620,17 @@ button.navbar-toggler:focus {
 * body .buscador form .submit-buscador {
   color: #012e67;
   font-weight: 400;
-  background-color: #90b48227;
-  border: solid #90B482;
+  background-color: #37afca7a;
+  border: solid #012e67;
   height: 100%;
   margin-top: 1rem;
-  padding: .25rem 2rem; }
+  padding: .25rem 2rem;
+  width: fit-content; }
 
 * body .back-top {
   position: fixed;
   display: none;
-  background: black;
+  background: #012e67;
   color: #fff;
   width: 44px;
   height: 44px;
@@ -689,8 +690,8 @@ button.navbar-toggler:focus {
           color: #012e67;
           font-weight: 400;
           padding: 0.25rem 0.5rem;
-          background-color: #90b48227;
-          border: solid #90B482;
+          background-color: #37afca7a;
+          border: solid #012e67;
           border-radius: 0.5rem; }
 
 .cart {
@@ -705,8 +706,8 @@ button.navbar-toggler:focus {
     color: #012e67;
     font-weight: 400;
     padding: 0.5rem 0.5rem;
-    background-color: #90b48227;
-    border: solid #90B482;
+    background-color: #37afca7a;
+    border: solid #012e67;
     border-radius: 0.5rem;
     margin-bottom: 1rem; }
 
@@ -754,6 +755,6 @@ button.navbar-toggler:focus {
       color: #012e67;
       font-weight: 400;
       padding: 0.25rem 0.5rem;
-      background-color: #90b48227;
-      border: solid #90B482;
+      background-color: #37afca7a;
+      border: solid #012e67;
       border-radius: 0.5rem; }
